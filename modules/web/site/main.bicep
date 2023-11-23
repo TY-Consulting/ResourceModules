@@ -48,6 +48,9 @@ param vnetContentShareEnabled bool = false
 @description('Optional. To enable pulling image over Virtual Network.')
 param vnetImagePullEnabled bool = false
 
+@description('Optional. To enable backup and restore over Virtual Network.')
+param vnetBackupRestoreEnabled bool = false
+
 @description('Optional. Virtual Network Route All enabled. This causes all outbound traffic to have Virtual Network Security Groups and User Defined Routes applied.')
 param vnetRouteAllEnabled bool = false
 
@@ -215,6 +218,7 @@ resource app 'Microsoft.Web/sites@2022-09-01' = {
     publicNetworkAccess: !empty(publicNetworkAccess) ? any(publicNetworkAccess) : (!empty(privateEndpoints) ? 'Disabled' : 'Enabled')
     vnetContentShareEnabled: vnetContentShareEnabled
     vnetImagePullEnabled: vnetImagePullEnabled
+    vnetBackupRestoreEnabled: vnetBackupRestoreEnabled
     vnetRouteAllEnabled: vnetRouteAllEnabled
     scmSiteAlsoStopped: scmSiteAlsoStopped
   }

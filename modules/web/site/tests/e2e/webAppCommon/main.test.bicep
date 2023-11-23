@@ -225,6 +225,7 @@ module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem'
     scmSiteAlsoStopped: true
     vnetContentShareEnabled: true
     vnetImagePullEnabled: true
+    vnetBackupRestoreEnabled: true
     vnetRouteAllEnabled: true
     publicNetworkAccess: 'Disabled'
   }

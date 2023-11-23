@@ -644,6 +644,7 @@ module site 'br:bicep/modules/web.site:1.0.0' = {
         name: 'slot2'
       }
     ]
+    vnetBackupRestoreEnabled: true
     vnetContentShareEnabled: true
     vnetImagePullEnabled: true
     vnetRouteAllEnabled: true
@@ -853,6 +854,9 @@ module site 'br:bicep/modules/web.site:1.0.0' = {
         }
       ]
     },
+    "vnetBackupRestoreEnabled": {
+      "value": true
+    },
     "vnetContentShareEnabled": {
       "value": true
     },
@@ -973,6 +977,7 @@ module site 'br:bicep/modules/web.site:1.0.0' = {
 | [`storageAccountResourceId`](#parameter-storageaccountresourceid) | string | Required if app of kind functionapp. Resource ID of the storage account to manage triggers and logging function executions. |
 | [`tags`](#parameter-tags) | object | Tags of the resource. |
 | [`virtualNetworkSubnetId`](#parameter-virtualnetworksubnetid) | string | Azure Resource Manager ID of the Virtual network and subnet to be joined by Regional VNET Integration. This must be of the form /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}. |
+| [`vnetBackupRestoreEnabled`](#parameter-vnetbackuprestoreenabled) | bool | To enable backup and restore over Virtual Network. |
 | [`vnetContentShareEnabled`](#parameter-vnetcontentshareenabled) | bool | To enable accessing content over virtual network. |
 | [`vnetImagePullEnabled`](#parameter-vnetimagepullenabled) | bool | To enable pulling image over Virtual Network. |
 | [`vnetRouteAllEnabled`](#parameter-vnetrouteallenabled) | bool | Virtual Network Route All enabled. This causes all outbound traffic to have Virtual Network Security Groups and User Defined Routes applied. |
@@ -1680,6 +1685,13 @@ Azure Resource Manager ID of the Virtual network and subnet to be joined by Regi
 - Required: No
 - Type: string
 - Default: `''`
+
+### Parameter: `vnetBackupRestoreEnabled`
+
+To enable backup and restore over Virtual Network.
+- Required: No
+- Type: bool
+- Default: `False`
 
 ### Parameter: `vnetContentShareEnabled`
 
