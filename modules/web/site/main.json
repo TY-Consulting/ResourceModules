@@ -6,7 +6,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.23.1.45101",
-      "templateHash": "6627371400613258723"
+      "templateHash": "9008538988014716830"
     },
     "name": "Web/Function Apps",
     "description": "This module deploys a Web or Function App.",
@@ -504,6 +504,13 @@
         "description": "Optional. To enable pulling image over Virtual Network."
       }
     },
+    "vnetBackupRestoreEnabled": {
+      "type": "bool",
+      "defaultValue": false,
+      "metadata": {
+        "description": "Optional. To enable backup and restore over Virtual Network."
+      }
+    },
     "vnetRouteAllEnabled": {
       "type": "bool",
       "defaultValue": false,
@@ -782,6 +789,7 @@
         "publicNetworkAccess": "[if(not(empty(parameters('publicNetworkAccess'))), parameters('publicNetworkAccess'), if(not(empty(parameters('privateEndpoints'))), 'Disabled', 'Enabled'))]",
         "vnetContentShareEnabled": "[parameters('vnetContentShareEnabled')]",
         "vnetImagePullEnabled": "[parameters('vnetImagePullEnabled')]",
+        "vnetBackupRestoreEnabled": "[parameters('vnetBackupRestoreEnabled')]",
         "vnetRouteAllEnabled": "[parameters('vnetRouteAllEnabled')]",
         "scmSiteAlsoStopped": "[parameters('scmSiteAlsoStopped')]"
       }
